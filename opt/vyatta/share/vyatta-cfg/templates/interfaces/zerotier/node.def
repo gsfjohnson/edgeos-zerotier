@@ -1,0 +1,7 @@
+tag:
+priority: 459
+type: txt
+help: ZeroTier interface name
+val_help: <ztN>; ZeroTier interface name
+syntax:expression: pattern $VAR(@) "^zt[a-z0-9]+$" \
+                   ; "zt must be (wgxxxxxxxx)"

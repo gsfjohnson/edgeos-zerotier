@@ -1,0 +1,3 @@
+help: Join a ZeroTier network
+
+run: sudo sudo /usr/sbin/zerotier-cli join ${3}

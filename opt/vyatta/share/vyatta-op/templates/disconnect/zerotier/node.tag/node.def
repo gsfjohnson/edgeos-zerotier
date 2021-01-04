@@ -1,0 +1,3 @@
+help: Leave a ZeroTier network
+
+run: sudo sudo /usr/sbin/zerotier-cli leave ${3}
