@@ -82,7 +82,7 @@ my %net_prefix = (
     '^ifb[\d]+$'   => { path => 'input' },
     '^switch[\d]+$'   => { path => 'switch', vif => 'vif' },
     '^l2tpeth[\d]+$'  => { path => 'l2tpv3' },
-    '^wg[\d]+$'    => { path => 'wireguard' },
+    '^l2tpc[\d]+$' => { path => 'l2tp-client' },
     '^zt[a-z0-9]+$'    => { path => 'zerotier' },
 );
 
@@ -172,7 +172,7 @@ sub get_all_cfg_interfaces {
   return @ret_ifs;
 }
 
-# Read ppp config to fine associated interface for ppp device
+# Read ppp config to find associated interface for pppoe device
 sub _ppp_intf {
     my $dev = shift;
     my $intf;
@@ -193,7 +193,7 @@ sub _ppp_intf {
     return $intf;
 }
 
-# Go path hunting to find ppp device
+# Go path hunting to find pppoe device
 sub ppp_path {
     my $self = shift;
 
@@ -300,7 +300,7 @@ sub path {
 
     return $path if defined($path);
 
-    # Go path hunting to find ppp device
+    # Go path hunting to find pppoe device
     return ppp_path($self);
 }
 
